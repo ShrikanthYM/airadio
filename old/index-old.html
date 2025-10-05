@@ -125,7 +125,7 @@
         /* For Sale Section */
         .for-sale {
             text-align: center;
-            padding: 100px 5% 40px;
+            padding: 120px 5% 60px;
             animation: fadeInUp 1s ease-out;
         }
 
@@ -148,9 +148,9 @@
         }
 
         .for-sale h1 {
-            font-size: 4.5rem;
+            font-size: 5.5rem;
             font-weight: 900;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             background: var(--gradient-radio);
             background-size: 400% 400%;
             -webkit-background-clip: text;
@@ -166,9 +166,9 @@
         }
 
         .for-sale .tagline {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             font-weight: 300;
             letter-spacing: 0.5px;
             line-height: 1.8;
@@ -177,10 +177,10 @@
         /* Features Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin: 3rem 0;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+            max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -189,7 +189,7 @@
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 1.5rem;
+            padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
@@ -201,8 +201,8 @@
         }
 
         .feature-item i {
-            font-size: 2rem;
-            margin-bottom: 0.8rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             background: var(--gradient-radio);
             background-size: 400% 400%;
             -webkit-background-clip: text;
@@ -213,34 +213,26 @@
         }
 
         .feature-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
             color: #fff;
         }
 
         .feature-item p {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         /* Contact Form */
         .contact-section {
-            max-width: 1400px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 2rem 5%;
-        }
-
-        .form-container-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 3rem 5%;
         }
 
         .section-title {
-            text-align: left;
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .section-title h2 {
@@ -258,89 +250,13 @@
         .section-title p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Wave Animation */
-        .wave-container {
-            position: relative;
-            width: 100%;
-            height: 60px;
-            margin: 1.5rem 0 2rem 0;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            gap: 3px;
-        }
-
-        .wave-bar {
-            width: 8px;
-            background: linear-gradient(to top, var(--primary-purple), var(--primary-pink));
-            border-radius: 4px 4px 0 0;
-            animation: waveMove 1s ease-in-out infinite;
-        }
-
-        .wave-bar:nth-child(1) { height: 15px; animation-delay: 0s; }
-        .wave-bar:nth-child(2) { height: 25px; animation-delay: 0.1s; }
-        .wave-bar:nth-child(3) { height: 35px; animation-delay: 0.2s; }
-        .wave-bar:nth-child(4) { height: 45px; animation-delay: 0.3s; }
-        .wave-bar:nth-child(5) { height: 55px; animation-delay: 0.4s; }
-        .wave-bar:nth-child(6) { height: 50px; animation-delay: 0.5s; }
-        .wave-bar:nth-child(7) { height: 40px; animation-delay: 0.6s; }
-        .wave-bar:nth-child(8) { height: 30px; animation-delay: 0.7s; }
-        .wave-bar:nth-child(9) { height: 20px; animation-delay: 0.8s; }
-        .wave-bar:nth-child(10) { height: 15px; animation-delay: 0.9s; }
-
-        @keyframes waveMove {
-            0%, 100% {
-                transform: scaleY(1);
-                opacity: 0.6;
-            }
-            50% {
-                transform: scaleY(1.3);
-                opacity: 1;
-            }
-        }
-
-        /* Audio Visualizer in Form Section */
-        .form-audio-visualizer {
-            display: flex;
-            gap: 5px;
-            justify-content: center;
-            align-items: end;
-            height: 80px;
-            margin: 2rem 0;
-        }
-
-        .form-audio-visualizer .bar {
-            width: 8px;
-            background: linear-gradient(to top, var(--primary-purple), var(--primary-pink));
-            border-radius: 4px;
-            animation: visualizer 1.5s ease-in-out infinite;
-        }
-
-        .form-audio-visualizer .bar:nth-child(2) { animation-delay: 0.1s; }
-        .form-audio-visualizer .bar:nth-child(3) { animation-delay: 0.2s; }
-        .form-audio-visualizer .bar:nth-child(4) { animation-delay: 0.3s; }
-        .form-audio-visualizer .bar:nth-child(5) { animation-delay: 0.4s; }
-        .form-audio-visualizer .bar:nth-child(6) { animation-delay: 0.5s; }
-        .form-audio-visualizer .bar:nth-child(7) { animation-delay: 0.6s; }
-        .form-audio-visualizer .bar:nth-child(8) { animation-delay: 0.7s; }
-        .form-audio-visualizer .bar:nth-child(9) { animation-delay: 0.8s; }
-        .form-audio-visualizer .bar:nth-child(10) { animation-delay: 0.9s; }
-
-        .visualizer-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         .inquiry-form {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border-radius: 25px;
-            padding: 2.5rem;
+            padding: 3rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -350,17 +266,17 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 1rem 1.3rem;
+            padding: 1rem 1.5rem;
             font-size: 1rem;
             border: 2px solid rgba(139, 92, 246, 0.3);
             border-radius: 15px;
@@ -374,7 +290,7 @@
 
         .form-group textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
         }
 
         .form-group input:focus,
@@ -436,23 +352,23 @@
 
         /* Stats Section */
         .stats {
-            padding: 2rem 5%;
+            padding: 4rem 5%;
             background: rgba(255, 255, 255, 0.02);
         }
 
         .stats-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             text-align: center;
         }
 
         .stat-item h3 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 900;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
             background: var(--gradient-radio);
             background-size: 400% 400%;
             -webkit-background-clip: text;
@@ -463,15 +379,15 @@
 
         .stat-item p {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 500;
         }
 
         /* Footer */
         footer {
             background: var(--darker-bg);
-            padding: 2rem 5% 1.5rem;
-            margin-top: 3rem;
+            padding: 3rem 5% 2rem;
+            margin-top: 5rem;
             text-align: center;
         }
 
@@ -489,15 +405,6 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        @keyframes visualizer {
-            0%, 100% {
-                height: 20px;
-            }
-            50% {
-                height: 60px;
             }
         }
 
@@ -538,20 +445,7 @@
             }
 
             .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .form-container-wrapper {
                 grid-template-columns: 1fr;
-            }
-
-            .visualizer-container {
-                display: none;
-            }
-
-            .section-title {
-                text-align: center;
-                margin-bottom: 2rem;
             }
 
             .stats-container {
@@ -588,7 +482,7 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <i class="fas fa-broadcast-tower"></i>
-                RadioGPT.com
+                RADIOGPT
             </a>
         </div>
     </nav>
@@ -648,29 +542,12 @@
     </section>
 
     <section class="contact-section">
-        <div class="form-container-wrapper">
-            <div class="section-title">
-                <h2>Make An Offer</h2>
-                <p>Serious inquiries only. Fill out the form and we'll get back to you within 24 hours.</p>
-                <div class="visualizer-container">
-                <div class="form-audio-visualizer">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </div>
+        <div class="section-title">
+            <h2>Make An Offer</h2>
+            <p>Serious inquiries only. Fill out the form below and we'll get back to you within 24 hours.</p>
+        </div>
 
-            </div>
-
-            
-            <form action="https://formsubmit.co/srikanth.malawad@gmail.com" method="POST" class="inquiry-form">
+        <form action="https://formsubmit.co/srikanth.malawad@gmail.com" method="POST" class="inquiry-form">
             <!-- FormSubmit Configuration -->
             <input type="hidden" name="_subject" value="New RADIOGPT.COM Domain Inquiry">
             <input type="hidden" name="_captcha" value="false">
@@ -686,6 +563,17 @@
                 <label for="email">Email Address *</label>
                 <input type="email" id="email" name="email" placeholder="john@example.com" required>
             </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company / Organization</label>
+                <input type="text" id="company" name="company" placeholder="Your Company Name">
+            </div>
+
             <div class="form-group">
                 <label for="intended_use">Intended Use *</label>
                 <select id="intended_use" name="intended_use" required>
@@ -716,7 +604,6 @@
 
             <p class="form-note">All information is confidential. We respond to serious inquiries within 24 hours.</p>
         </form>
-        </div>
     </section>
 
     <footer>
