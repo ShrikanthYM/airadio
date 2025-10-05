@@ -547,11 +547,12 @@
             <p>Serious inquiries only. Fill out the form below and we'll get back to you within 24 hours.</p>
         </div>
 
-        <form action="https://formsubmit.co/srikanth.malawad@gmail.com" method="POST" class="inquiry-form">
+        <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST" class="inquiry-form">
             <!-- FormSubmit Configuration -->
             <input type="hidden" name="_subject" value="New RADIOGPT.COM Domain Inquiry">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://radiogpt.com/#thank-you">
             
             <div class="form-group">
                 <label for="name">Full Name *</label>
@@ -611,7 +612,28 @@
         </div>
     </footer>
 
+    <!-- Thank You Modal -->
+    <div id="thank-you-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center;">
+        <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2)); backdrop-filter: blur(20px); border-radius: 30px; padding: 4rem 3rem; text-align: center; max-width: 500px; border: 2px solid rgba(139, 92, 246, 0.3);">
+            <i class="fas fa-check-circle" style="font-size: 5rem; color: #84CC16; margin-bottom: 1.5rem;"></i>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; background: var(--gradient-radio); background-size: 400% 400%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Thank You!</h2>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem;">Your inquiry has been received. We'll get back to you within 24 hours.</p>
+            <button onclick="closeThankYou()" style="padding: 1rem 2.5rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; background: linear-gradient(45deg, #8B5CF6, #EC4899); color: #fff; box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);">Close</button>
+        </div>
+    </div>
+
     <script>
+        // Check for thank you hash and show modal
+        if (window.location.hash === '#thank-you') {
+            document.getElementById('thank-you-modal').style.display = 'flex';
+            // Remove hash from URL
+            history.replaceState(null, null, ' ');
+        }
+
+        function closeThankYou() {
+            document.getElementById('thank-you-modal').style.display = 'none';
+        }
+
         // Add floating musical notes
         function createFloatingNote() {
             const notes = ['♪', '♫', '♬', '♩'];
