@@ -6,6 +6,7 @@
     <title>RADIOGPT.COM - Premium Domain For Sale</title>
     <meta name="description" content="Premium AI radio domain RADIOGPT.COM is for sale. Perfect for AI broadcasting, music streaming, or radio technology ventures.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         * {
             margin: 0;
@@ -33,7 +34,6 @@
             min-height: 100vh;
         }
 
-        /* Animated Background */
         .background-container {
             position: fixed;
             top: 0;
@@ -72,7 +72,6 @@
             50% { background-position: 100% 50%; }
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -122,7 +121,6 @@
             50% { transform: scale(1.1); }
         }
 
-        /* For Sale Section */
         .for-sale {
             text-align: center;
             padding: 100px 5% 40px;
@@ -174,7 +172,6 @@
             line-height: 1.8;
         }
 
-        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -223,7 +220,6 @@
             font-size: 0.9rem;
         }
 
-        /* Contact Form */
         .contact-section {
             max-width: 1400px;
             margin: 0 auto;
@@ -261,48 +257,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Wave Animation */
-        .wave-container {
-            position: relative;
-            width: 100%;
-            height: 60px;
-            margin: 1.5rem 0 2rem 0;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            gap: 3px;
-        }
-
-        .wave-bar {
-            width: 8px;
-            background: linear-gradient(to top, var(--primary-purple), var(--primary-pink));
-            border-radius: 4px 4px 0 0;
-            animation: waveMove 1s ease-in-out infinite;
-        }
-
-        .wave-bar:nth-child(1) { height: 15px; animation-delay: 0s; }
-        .wave-bar:nth-child(2) { height: 25px; animation-delay: 0.1s; }
-        .wave-bar:nth-child(3) { height: 35px; animation-delay: 0.2s; }
-        .wave-bar:nth-child(4) { height: 45px; animation-delay: 0.3s; }
-        .wave-bar:nth-child(5) { height: 55px; animation-delay: 0.4s; }
-        .wave-bar:nth-child(6) { height: 50px; animation-delay: 0.5s; }
-        .wave-bar:nth-child(7) { height: 40px; animation-delay: 0.6s; }
-        .wave-bar:nth-child(8) { height: 30px; animation-delay: 0.7s; }
-        .wave-bar:nth-child(9) { height: 20px; animation-delay: 0.8s; }
-        .wave-bar:nth-child(10) { height: 15px; animation-delay: 0.9s; }
-
-        @keyframes waveMove {
-            0%, 100% {
-                transform: scaleY(1);
-                opacity: 0.6;
-            }
-            50% {
-                transform: scaleY(1.3);
-                opacity: 1;
-            }
-        }
-
-        /* Audio Visualizer in Form Section */
         .form-audio-visualizer {
             display: flex;
             gap: 5px;
@@ -328,6 +282,11 @@
         .form-audio-visualizer .bar:nth-child(8) { animation-delay: 0.7s; }
         .form-audio-visualizer .bar:nth-child(9) { animation-delay: 0.8s; }
         .form-audio-visualizer .bar:nth-child(10) { animation-delay: 0.9s; }
+
+        @keyframes visualizer {
+            0%, 100% { height: 20px; }
+            50% { height: 60px; }
+        }
 
         .visualizer-container {
             display: flex;
@@ -434,7 +393,6 @@
             margin-top: 1rem;
         }
 
-        /* Stats Section */
         .stats {
             padding: 2rem 5%;
             background: rgba(255, 255, 255, 0.02);
@@ -467,7 +425,6 @@
             font-weight: 500;
         }
 
-        /* Footer */
         footer {
             background: var(--darker-bg);
             padding: 2rem 5% 1.5rem;
@@ -480,7 +437,6 @@
             font-size: 0.95rem;
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -492,16 +448,6 @@
             }
         }
 
-        @keyframes visualizer {
-            0%, 100% {
-                height: 20px;
-            }
-            50% {
-                height: 60px;
-            }
-        }
-
-        /* Floating Elements */
         .floating-element {
             position: absolute;
             font-size: 2rem;
@@ -519,7 +465,6 @@
             }
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .for-sale h1 {
                 font-size: 3.5rem;
@@ -577,11 +522,6 @@
             }
         }
     </style>
-
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
     <div class="background-container">
@@ -658,69 +598,78 @@
                 <h2>Make An Offer</h2>
                 <p>Serious inquiries only. Fill out the form and we'll get back to you within 24 hours.</p>
                 <div class="visualizer-container">
-                <div class="form-audio-visualizer">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                    <div class="form-audio-visualizer">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
                 </div>
             </div>
 
-            </div>
-
-            
             <form action="https://formsubmit.co/srikanth.malawad@gmail.com" method="POST" class="inquiry-form">
-            <!-- FormSubmit Configuration -->
-            <input type="hidden" name="_subject" value="New RadioGPT.com Domain Inquiry">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://radiogpt.com/#thank-you">
-            
-            <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required>
-            </div>
+                <input type="hidden" name="_subject" value="New RADIOGPT.COM Domain Inquiry">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://radiogpt.com/#thank-you">
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
 
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" placeholder="john@example.com" required>
-            </div>
-            <div class="form-group">
-                <label for="intended_use">Intended Use *</label>
-                <select id="intended_use" name="intended_use" required>
-                    <option value="">Select an option</option>
-                    <option value="AI Radio Platform">AI Radio Platform</option>
-                    <option value="Music Streaming Service">Music Streaming Service</option>
-                    <option value="Podcast Network">Podcast Network</option>
-                    <option value="Broadcasting Technology">Broadcasting Technology</option>
-                    <option value="Investment/Resale">Investment/Resale</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
 
-            <div class="form-group">
-                <label for="offer">Your Offer (USD)</label>
-                <input type="text" id="offer" name="offer" placeholder="e.g., $50,000">
-            </div>
+                <div class="form-group">
+                    <label for="intended_use">Intended Use *</label>
+                    <select id="intended_use" name="intended_use" required>
+                        <option value="">Select an option</option>
+                        <option value="AI Radio Platform">AI Radio Platform</option>
+                        <option value="Music Streaming Service">Music Streaming Service</option>
+                        <option value="Podcast Network">Podcast Network</option>
+                        <option value="Broadcasting Technology">Broadcasting Technology</option>
+                        <option value="Investment/Resale">Investment/Resale</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="message">Additional Details *</label>
-                <textarea id="message" name="message" placeholder="Tell us about your project, timeline, and any questions you may have..." required></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="offer">Your Offer (USD)</label>
+                    <input type="text" id="offer" name="offer" placeholder="e.g., $10,000">
+                </div>
 
-            <button type="submit" class="submit-btn">
-                <span>Submit Inquiry</span>
-                <i class="fas fa-paper-plane"></i>
-            </button>
+                <div class="form-group">
+                    <label for="message">Additional Details *</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your project, timeline, and any questions you may have..." required></textarea>
+                </div>
 
-            <p class="form-note">All information is confidential. We respond to serious inquiries within 24 hours.</p>
-        </form>
+                <div class="form-group">
+                    <label>Security Verification *</label>
+                    <!-- Make sure your Site Key is registered for radiogpt.com domain -->
+                    <div class="g-recaptcha" data-sitekey="YOUR_RADIOGPT_SITE_KEY_HERE" data-theme="dark"></div>
+                    <div id="recaptcha-error" style="color: #ff4444; font-size: 0.9rem; margin-top: 0.5rem; display: none;">
+                        reCAPTCHA not loaded. Check: 1) Site Key is correct, 2) Domain is registered, 3) Internet connection
+                    </div>
+                </div>
+
+                <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+                <button type="submit" class="submit-btn">
+                    <span>Submit Inquiry</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+
+                <p class="form-note">All information is confidential. We respond to serious inquiries within 24 hours.</p>
+            </form>
         </div>
     </section>
 
@@ -730,7 +679,6 @@
         </div>
     </footer>
 
-    <!-- Thank You Modal -->
     <div id="thank-you-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center;">
         <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2)); backdrop-filter: blur(20px); border-radius: 30px; padding: 4rem 3rem; text-align: center; max-width: 500px; border: 2px solid rgba(139, 92, 246, 0.3);">
             <i class="fas fa-check-circle" style="font-size: 5rem; color: #84CC16; margin-bottom: 1.5rem;"></i>
@@ -741,10 +689,8 @@
     </div>
 
     <script>
-        // Check for thank you hash and show modal
         if (window.location.hash === '#thank-you') {
             document.getElementById('thank-you-modal').style.display = 'flex';
-            // Remove hash from URL
             history.replaceState(null, null, ' ');
         }
 
@@ -752,7 +698,6 @@
             document.getElementById('thank-you-modal').style.display = 'none';
         }
 
-        // Add floating musical notes
         function createFloatingNote() {
             const notes = ['♪', '♫', '♬', '♩'];
             const note = document.createElement('div');
@@ -761,91 +706,44 @@
             note.style.left = Math.random() * 100 + 'vw';
             note.style.top = Math.random() * 100 + 'vh';
             note.style.animationDelay = Math.random() * 5 + 's';
-            note.style.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+            note.style.color = 'hsl(' + Math.random() * 360 + ', 70%, 60%)';
             document.body.appendChild(note);
-
-            setTimeout(() => {
-                note.remove();
-            }, 15000);
+            setTimeout(function() { note.remove(); }, 15000);
         }
 
-        // Create floating notes periodically
         setInterval(createFloatingNote, 3000);
 
-        // Add glitch effect to logo
         const logo = document.querySelector('.logo');
-        setInterval(() => {
+        setInterval(function() {
             if (Math.random() < 0.1) {
                 logo.style.textShadow = '2px 0 #ff00ff, -2px 0 #00ffff';
-                setTimeout(() => {
-                    logo.style.textShadow = 'none';
-                }, 100);
+                setTimeout(function() { logo.style.textShadow = 'none'; }, 100);
             }
         }, 2000);
 
-        // Add particle system
         function createParticle() {
+            const colors = ['#8B5CF6', '#EC4899', '#06B6D4', '#84CC16', '#F97316'];
             const particle = document.createElement('div');
             particle.style.position = 'fixed';
             particle.style.width = '4px';
             particle.style.height = '4px';
-            particle.style.background = `linear-gradient(45deg, ${getRandomColor()}, ${getRandomColor()})`;
+            particle.style.background = 'linear-gradient(45deg, ' + colors[Math.floor(Math.random() * colors.length)] + ', ' + colors[Math.floor(Math.random() * colors.length)] + ')';
             particle.style.borderRadius = '50%';
             particle.style.left = Math.random() * window.innerWidth + 'px';
             particle.style.top = window.innerHeight + 'px';
             particle.style.zIndex = '-1';
-            particle.style.animation = 'particleFloat 8s linear forwards';
             particle.style.pointerEvents = 'none';
+            particle.style.animation = 'particleFloat 8s linear forwards';
             document.body.appendChild(particle);
-
-            setTimeout(() => {
-                particle.remove();
-            }, 8000);
+            setTimeout(function() { particle.remove(); }, 8000);
         }
 
-        function getRandomColor() {
-            const colors = ['#8B5CF6', '#EC4899', '#06B6D4', '#84CC16', '#F97316'];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        // Add particle float animation
         const style = document.createElement('style');
-        style.textContent = `
-            @keyframes particleFloat {
-                0% {
-                    transform: translateY(0px) scale(0);
-                    opacity: 1;
-                }
-                50% {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-                100% {
-                    transform: translateY(-100vh) scale(0);
-                    opacity: 0;
-                }
-            }
-        `;
+        style.textContent = '@keyframes particleFloat { 0% { transform: translateY(0px) scale(0); opacity: 1; } 50% { opacity: 1; transform: scale(1); } 100% { transform: translateY(-100vh) scale(0); opacity: 0; } }';
         document.head.appendChild(style);
 
-        // Create particles periodically
         setInterval(createParticle, 500);
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form validation enhancement
         const form = document.querySelector('.inquiry-form');
         form.addEventListener('submit', function(e) {
             const email = document.getElementById('email').value;
@@ -854,8 +752,31 @@
             if (!email || !message) {
                 e.preventDefault();
                 alert('Please fill in all required fields.');
+                return;
+            }
+
+            if (typeof grecaptcha === 'undefined') {
+                e.preventDefault();
+                document.getElementById('recaptcha-error').style.display = 'block';
+                alert('reCAPTCHA failed to load. Please check your internet connection and refresh the page.');
+                return;
+            }
+
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
+                e.preventDefault();
+                alert('Please complete the reCAPTCHA verification.');
+                return;
             }
         });
+
+        // Check if reCAPTCHA loaded after 3 seconds
+        setTimeout(function() {
+            if (typeof grecaptcha === 'undefined') {
+                document.getElementById('recaptcha-error').style.display = 'block';
+                console.error('reCAPTCHA failed to load. Check: 1) Site Key, 2) Domain registration, 3) Network connection');
+            }
+        }, 3000);
     </script>
 </body>
 </html>
