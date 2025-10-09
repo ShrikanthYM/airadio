@@ -295,6 +295,34 @@
             justify-content: center;
         }
 
+        .trust-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .trust-item i {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-cyan);
+            display: block;
+        }
+
+        .trust-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         .inquiry-form {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
@@ -494,6 +522,20 @@
                 display: none;
             }
 
+            .trust-features {
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+
+            .trust-item {
+                padding: 0.8rem;
+            }
+
+            .trust-item i {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
             .section-title {
                 text-align: center;
                 margin-bottom: 2rem;
@@ -610,6 +652,22 @@
                         <div class="bar"></div>
                         <div class="bar"></div>
                     </div>
+                    
+                    <!-- Trust Features -->
+                    <div class="trust-features">
+                        <div class="trust-item">
+                            <i class="fas fa-user-circle"></i>
+                            <p>Free domain transfer support included.<br>Take ownership today.</p>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-credit-card"></i>
+                            <p>Pay for your domain with any major credit card,<br>bank wire or crypto.</p>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <p>Your domain purchase is handled via<br>secure, third-party escrow.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -655,7 +713,7 @@
                 <div class="form-group">
                     <label>Security Verification *</label>
                     <!-- Make sure your Site Key is registered for radiogpt.com domain -->
-                    <div class="g-recaptcha" data-sitekey="6LflSOMrAAAAANI-Xm9UhuGQojXKboBTvkoqRBz6" data-theme="dark"></div>
+                    <div class="g-recaptcha" data-sitekey="YOUR_RADIOGPT_SITE_KEY_HERE" data-theme="dark"></div>
                     <div id="recaptcha-error" style="color: #ff4444; font-size: 0.9rem; margin-top: 0.5rem; display: none;">
                         reCAPTCHA not loaded. Check: 1) Site Key is correct, 2) Domain is registered, 3) Internet connection
                     </div>
