@@ -6,7 +6,7 @@
     <title>RadioGPT.com - Premium Domain For Sale</title>
     <meta name="description" content="Premium AI radio domain RadioGPT.com is for sale. Perfect for AI broadcasting, music streaming, or radio technology ventures.">
     
-    <link rel="icon" type="image/png" href="./imgs/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -722,7 +722,7 @@
                 <div class="form-group">
                     <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" placeholder="John Doe" required>
-                    <div class="error-message" id="name-error">Please enter a valid name (letters and spaces only)</div>
+                    <div class="error-message" id="name-error">Please enter a valid name (max 3 names, letters and single spaces only)</div>
                 </div>
 
                 <div class="form-group">
@@ -798,9 +798,23 @@
     <script>
         // Validation functions
         function validateName(name) {
-            // Only allow letters (a-z, A-Z) and single spaces (no multiple consecutive spaces)
+            // Only allow letters (a-z, A-Z) and single spaces
+            // Maximum 2 spaces allowed (which means 3 names maximum)
+            const trimmedName = name.trim();
+            
+            // Check if name has valid characters (letters and single spaces only)
             const nameRegex = /^[a-zA-Z]+(\s[a-zA-Z]+)*$/;
-            return nameRegex.test(name) && name.trim().length > 0;
+            if (!nameRegex.test(trimmedName)) {
+                return false;
+            }
+            
+            // Count spaces - maximum 2 spaces allowed (3 names)
+            const spaceCount = (trimmedName.match(/\s/g) || []).length;
+            if (spaceCount > 2) {
+                return false;
+            }
+            
+            return trimmedName.length > 0;
         }
 
         function validateEmail(email) {
@@ -1065,7 +1079,7 @@
             }
         }, 3000);
     </script>
-    
+        
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
