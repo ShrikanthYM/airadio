@@ -316,8 +316,19 @@
         .trust-item i {
             font-size: 2.5rem;
             margin-bottom: 0.8rem;
-            color: var(--primary-cyan);
             display: block;
+        }
+
+        .trust-item:nth-child(1) i {
+            color: var(--primary-purple);
+        }
+
+        .trust-item:nth-child(2) i {
+            color: var(--primary-pink);
+        }
+
+        .trust-item:nth-child(3) i {
+            color: var(--accent-lime);
         }
 
         .trust-item p {
@@ -336,6 +347,7 @@
 
         .form-group {
             margin-bottom: 1.5rem;
+            position: relative;
         }
 
         .form-group label {
@@ -360,6 +372,16 @@
             outline: none;
             transition: all 0.3s ease;
             font-family: inherit;
+        }
+
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: #ff4444;
+        }
+
+        .form-group input.success,
+        .form-group textarea.success {
+            border-color: var(--accent-lime);
         }
 
         .form-group textarea {
@@ -389,6 +411,18 @@
             color: #fff;
         }
 
+        .error-message {
+            display: none;
+            color: #ff4444;
+            font-size: 0.85rem;
+            margin-top: 0.4rem;
+            margin-left: 0.3rem;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
         .submit-btn {
             width: 100%;
             padding: 1.2rem 2.5rem;
@@ -415,6 +449,12 @@
 
         .submit-btn:active {
             transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .form-note {
@@ -588,7 +628,7 @@
             <div class="for-sale-badge">
                 <i class="fas fa-tag"></i> Premium Domain For Sale
             </div>
-            <h1>RadioGPT<span class="domain-extension">.com</span></h1>
+            <h1>RADIOGPT<span class="domain-extension">.COM</span></h1>
             <p class="tagline">A premium, brandable domain perfect for AI-powered radio, music streaming platforms, podcast networks, or innovative broadcasting ventures. Own the future of intelligent audio entertainment.</p>
 
             <div class="features-grid">
@@ -656,7 +696,6 @@
                         <div class="bar"></div>
                     </div>
                     
-                    <!-- Trust Features -->
                     <div class="trust-features">
                         <div class="trust-item">
                             <i class="fas fa-user-circle"></i>
@@ -674,8 +713,8 @@
                 </div>
             </div>
 
-            <form action="https://formsubmit.co/contact@radiogpt.com" method="POST" class="inquiry-form">
-                <input type="hidden" name="_subject" value="New RADIOGPT.COM Domain Inquiry">
+            <form action="https://formsubmit.co/srikanth.malawad@gmail.com" method="POST" class="inquiry-form" id="inquiryForm" novalidate>
+                <input type="hidden" name="_subject" value="New RadioGPT.com Domain Inquiry">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_next" value="https://radiogpt.com/#thank-you">
@@ -683,11 +722,13 @@
                 <div class="form-group">
                     <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    <div class="error-message" id="name-error">Please enter a valid name (letters and spaces only)</div>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <input type="email" id="email" name="email" placeholder="contact@radiogpt.com" required>
+                    <div class="error-message" id="email-error">Please enter a valid email address</div>
                 </div>
 
                 <div class="form-group">
@@ -701,28 +742,33 @@
                         <option value="Investment/Resale">Investment/Resale</option>
                         <option value="Other">Other</option>
                     </select>
+                    <div class="error-message" id="intended-error">Please select an intended use</div>
                 </div>
 
                 <div class="form-group">
                     <label for="offer">Your Offer (USD)</label>
-                    <input type="text" id="offer" name="offer" placeholder="e.g., $10,000">
+                    <input type="text" id="offer" name="offer" placeholder="e.g., 10000" maxlength="7">
+                    <div class="error-message" id="offer-error">Please enter only numbers (max 7 digits, no $ or commas)</div>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Additional Details *</label>
                     <textarea id="message" name="message" placeholder="Tell us about your project, timeline, and any questions you may have..." required></textarea>
+                    <div class="error-message" id="message-error">Please provide additional details</div>
                 </div>
 
                 <div class="form-group">
                     <label>Security Verification *</label>
-                    <!-- Make sure your Site Key is registered for radiogpt.com domain -->
-                    <div class="g-recaptcha" data-sitekey="6LflSOMrAAAAANI-Xm9UhuGQojXKboBTvkoqRBz6" data-theme="dark"></div>
+                    <div class="g-recaptcha" data-sitekey="6LeZteYrAAAAAHQPWs5ML-nuOYoq8iDgdegvV2kC" data-theme="dark"></div>
                     <div id="recaptcha-error" style="color: #ff4444; font-size: 0.9rem; margin-top: 0.5rem; display: none;">
                         reCAPTCHA not loaded. Check: 1) Site Key is correct, 2) Domain is registered, 3) Internet connection
                     </div>
                 </div>
 
                 <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+                
+                <input type="hidden" name="_url" id="url_field" value="">
+                <input type="hidden" name="_timestamp" id="timestamp_field" value="">
 
                 <button type="submit" class="submit-btn">
                     <span>Submit Inquiry</span>
@@ -736,7 +782,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 RADIOGPT.COM - Premium Domain For Sale. All rights reserved.</p>
+            <p>&copy; 2025 RadioGPT.com - Premium Domain For Sale. All rights reserved.</p>
         </div>
     </footer>
 
@@ -750,6 +796,211 @@
     </div>
 
     <script>
+        // Validation functions
+        function validateName(name) {
+            // Only allow letters (a-z, A-Z) and single spaces (no multiple consecutive spaces)
+            const nameRegex = /^[a-zA-Z]+(\s[a-zA-Z]+)*$/;
+            return nameRegex.test(name) && name.trim().length > 0;
+        }
+
+        function validateEmail(email) {
+            // Email validation - only allow letters, numbers, underscore (_), and dot (.)
+            // No special characters like -, +, *, / allowed
+            const emailRegex = /^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
+            
+            // Check for invalid special characters
+            const localPart = email.split('@')[0];
+            if (/[-+*/]/.test(localPart)) {
+                return false;
+            }
+            
+            // Additional check: ensure if there's a dot before @, there's at least one letter after it
+            const parts = email.split('@');
+            if (parts.length === 2) {
+                const localPartCheck = parts[0];
+                if (localPartCheck.includes('.')) {
+                    const lastDotIndex = localPartCheck.lastIndexOf('.');
+                    const afterDot = localPartCheck.substring(lastDotIndex + 1);
+                    // Must have at least one character after the last dot, and it must be a letter
+                    if (afterDot.length === 0 || !/[a-zA-Z]/.test(afterDot)) {
+                        return false;
+                    }
+                }
+            }
+            
+            return emailRegex.test(email);
+        }
+
+        function validateOffer(offer) {
+            // Only allow integer numbers (no decimals, no special characters)
+            // Maximum 7 digits allowed
+            if (offer.trim() === '') return true; // Optional field
+            const offerRegex = /^[0-9]{1,7}$/;
+            return offerRegex.test(offer);
+        }
+
+        function showError(fieldId, errorId, message) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(errorId);
+            field.classList.add('error');
+            field.classList.remove('success');
+            errorElement.textContent = message || errorElement.textContent;
+            errorElement.classList.add('show');
+        }
+
+        function showSuccess(fieldId, errorId) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(errorId);
+            field.classList.remove('error');
+            field.classList.add('success');
+            errorElement.classList.remove('show');
+        }
+
+        function clearValidation(fieldId, errorId) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(errorId);
+            field.classList.remove('error', 'success');
+            errorElement.classList.remove('show');
+        }
+
+        // Real-time validation
+        document.getElementById('name').addEventListener('input', function(e) {
+            const value = e.target.value;
+            if (value === '') {
+                clearValidation('name', 'name-error');
+            } else if (validateName(value)) {
+                showSuccess('name', 'name-error');
+            } else {
+                showError('name', 'name-error');
+            }
+        });
+
+        document.getElementById('email').addEventListener('input', function(e) {
+            const value = e.target.value;
+            if (value === '') {
+                clearValidation('email', 'email-error');
+            } else if (validateEmail(value)) {
+                showSuccess('email', 'email-error');
+            } else {
+                showError('email', 'email-error');
+            }
+        });
+
+        document.getElementById('offer').addEventListener('input', function(e) {
+            let value = e.target.value;
+            
+            // Remove any non-numeric characters
+            value = value.replace(/[^0-9]/g, '');
+            
+            // Update the field with cleaned value
+            e.target.value = value;
+            
+            if (value === '') {
+                clearValidation('offer', 'offer-error');
+            } else if (validateOffer(value)) {
+                showSuccess('offer', 'offer-error');
+            } else {
+                showError('offer', 'offer-error');
+            }
+        });
+
+        document.getElementById('intended_use').addEventListener('change', function(e) {
+            const value = e.target.value;
+            if (value !== '') {
+                showSuccess('intended_use', 'intended-error');
+            }
+        });
+
+        document.getElementById('message').addEventListener('input', function(e) {
+            const value = e.target.value;
+            if (value === '') {
+                clearValidation('message', 'message-error');
+            } else if (value.trim().length >= 10) {
+                showSuccess('message', 'message-error');
+            } else {
+                showError('message', 'message-error', 'Please provide at least 10 characters');
+            }
+        });
+
+        // Form submission
+        const form = document.getElementById('inquiryForm');
+        
+        document.getElementById('timestamp_field').value = Date.now();
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+
+            // Validate name
+            const name = document.getElementById('name').value;
+            if (!validateName(name)) {
+                showError('name', 'name-error');
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email').value;
+            if (!validateEmail(email)) {
+                showError('email', 'email-error');
+                isValid = false;
+            }
+
+            // Validate intended use
+            const intendedUse = document.getElementById('intended_use').value;
+            if (intendedUse === '') {
+                showError('intended_use', 'intended-error');
+                isValid = false;
+            }
+
+            // Validate offer (optional but must be valid if provided)
+            const offer = document.getElementById('offer').value;
+            if (offer !== '' && !validateOffer(offer)) {
+                showError('offer', 'offer-error');
+                isValid = false;
+            }
+
+            // Validate message
+            const message = document.getElementById('message').value;
+            if (message.trim().length < 10) {
+                showError('message', 'message-error', 'Please provide at least 10 characters');
+                isValid = false;
+            }
+
+            // Check form submission speed (bot protection)
+            const timestamp = parseInt(document.getElementById('timestamp_field').value);
+            const timeTaken = Date.now() - timestamp;
+            if (timeTaken < 3000) {
+                alert('Please take your time to fill out the form.');
+                return;
+            }
+
+            // Check reCAPTCHA
+            if (typeof grecaptcha === 'undefined') {
+                document.getElementById('recaptcha-error').style.display = 'block';
+                alert('reCAPTCHA failed to load. Please check your internet connection and refresh the page.');
+                return;
+            }
+
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
+                alert('Please complete the reCAPTCHA verification.');
+                isValid = false;
+            }
+
+            // If all validations pass, submit the form
+            if (isValid) {
+                form.submit();
+            } else {
+                // Scroll to first error
+                const firstError = document.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+
+        // Thank you modal
         if (window.location.hash === '#thank-you') {
             document.getElementById('thank-you-modal').style.display = 'flex';
             history.replaceState(null, null, ' ');
@@ -759,6 +1010,7 @@
             document.getElementById('thank-you-modal').style.display = 'none';
         }
 
+        // Floating animations
         function createFloatingNote() {
             const notes = ['♪', '♫', '♬', '♩'];
             const note = document.createElement('div');
@@ -805,33 +1057,7 @@
 
         setInterval(createParticle, 500);
 
-        const form = document.querySelector('.inquiry-form');
-        form.addEventListener('submit', function(e) {
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            if (!email || !message) {
-                e.preventDefault();
-                alert('Please fill in all required fields.');
-                return;
-            }
-
-            if (typeof grecaptcha === 'undefined') {
-                e.preventDefault();
-                document.getElementById('recaptcha-error').style.display = 'block';
-                alert('reCAPTCHA failed to load. Please check your internet connection and refresh the page.');
-                return;
-            }
-
-            const recaptchaResponse = grecaptcha.getResponse();
-            if (!recaptchaResponse) {
-                e.preventDefault();
-                alert('Please complete the reCAPTCHA verification.');
-                return;
-            }
-        });
-
-        // Check if reCAPTCHA loaded after 3 seconds
+        // Check if reCAPTCHA loaded
         setTimeout(function() {
             if (typeof grecaptcha === 'undefined') {
                 document.getElementById('recaptcha-error').style.display = 'block';
@@ -839,5 +1065,10 @@
             }
         }, 3000);
     </script>
+    
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
